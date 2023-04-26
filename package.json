@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hier09lyph/virtual-keyboard/issues"
   },
-  "homepage": "https://github.com/hier09lyph/virtual-keyboard#readme"
+  "homepage": "https://github.com/hier09lyph/virtual-keyboard#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0"
+  }
 }
