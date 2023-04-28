@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  width: 90%;
+  text-align: center;
+  // margin: 0 auto;
+}
+
+.header {
+  font-family: "Sigmar", cursive;
+  font-size: 60px;
+  color: rgb(78, 182, 147);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.textarea {
+  font-family: 'Roboto', sans-serif;
+  max-width: 710px;
+  margin: 0 auto;
+}
+
+textarea::placeholder {
+  text-align: center;
+}
+
+p {
+  font-family: "Sigmar", cursive;
+  text-align: center;
+}
+.keyboard {
+  font-family: 'Roboto', sans-serif;
+  
+  width: 710px;
+  height: 230px;
+  padding-top: 10px;
+  margin: 0 auto;
+  background:rgb(78, 182, 147);
+  border: 4px solid #222222;
+  border-radius: 10px;
+}
+
+.keyboard .key {
+  float: left;
+  margin-bottom: 4px;
+  width: 40px;
+  height: 40px;
+  margin-left: 6px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s,border-radius 0.2s;
+}
+
+
+.keyboard .key.pressed {
+  box-shadow: 0px 0px 7px 0px rgba(152, 47, 48, 1);
+  border-radius: 8px;
+}
+
+.keyboard .AltLeft,
+.keyboard .AltRight,
+.keyboard .ArrowUp,
+.keyboard .ArrowLeft,
+.keyboard .ArrowDown,
+.keyboard .ArrowRight,
+.keyboard .Backspace,
+.keyboard .CapsLock,
+.keyboard .ControlLeft,
+.keyboard .ControlRight,
+.keyboard .Delete,
+.keyboard .Enter,
+.keyboard .ShiftLeft,
+.keyboard .ShiftRight,
+.keyboard .Tab,
+.keyboard .MetaLeft {
+  font-weight: 600;
+  background-color: #d1cdcd;
+}
+.keyboard .Tab {
+  width: 50px;
+}
+.keyboard .Backspace,
+.keyboard .CapsLock,
+.keyboard .ShiftLeft {
+  width: 100px;
+}
+.keyboard .Delete {
+  width: 44px;
+}
+.keyboard .Enter,
+.keyboard .ShiftRight {
+  width: 86px;
+}
+.keyboard .Space {
+  width: 330px;
+}
