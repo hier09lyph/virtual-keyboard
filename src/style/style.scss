@@ -3,32 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-  width: 90%;
   text-align: center;
-  // margin: 0 auto;
+  background-color: #c2f5c2;
 }
 
 .header {
   font-family: "Sigmar", cursive;
   font-size: 60px;
-  color: rgb(78, 182, 147);
+  color: rgb(34, 154, 114);
   text-align: center;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .textarea {
   font-family: 'Roboto', sans-serif;
   max-width: 710px;
-  margin: 0 auto;
+  margin: 20px auto;
+  background-color: #c2f5c2;
 }
 
 textarea::placeholder {
+  padding-top: 20px;
   text-align: center;
 }
 
 p {
   font-family: "Sigmar", cursive;
   text-align: center;
+  color: rgb(34, 154, 114);
 }
 .keyboard {
   font-family: 'Roboto', sans-serif;
@@ -56,13 +58,14 @@ p {
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
-  transition: box-shadow 0.2s,border-radius 0.2s;
+  transition: border-radius 0.2s, background-color 0.4s, color 0.3s ;
 }
 
 
 .keyboard .key.pressed {
-  box-shadow: 0px 0px 7px 0px rgba(152, 47, 48, 1);
   border-radius: 8px;
+  background-color: #524e4e;
+  color: #fff;
 }
 
 .keyboard .AltLeft,

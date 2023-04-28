@@ -190,7 +190,7 @@ function addPressedClass([...arg]) {
     element.classList.add("pressed");
     setTimeout(() => {
       element.classList.remove("pressed");
-    }, 200);
+    }, 300);
   }
 }
 
