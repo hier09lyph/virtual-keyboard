@@ -96,6 +96,9 @@ class KeyboardButton {
     });
     button.addEventListener("mousedown", () => {
       button.classList.add("pressed");
+      setTimeout(() => {
+        button.classList.remove("pressed");
+      }, 300);
       if (this.eventCode === "ShiftLeft" || this.eventCode === "ShiftRight") {
         let eventCode = this.eventCode;
         pressShift(true, eventCode);
@@ -109,7 +112,7 @@ class KeyboardButton {
     });
 
     button.addEventListener("mouseup", () => {
-      button.classList.remove("pressed");
+      // button.classList.remove("pressed");
       if (this.eventCode === "ShiftLeft" || this.eventCode === "ShiftRight") {
         let eventCode = this.eventCode;
         pressShift(false, eventCode);
