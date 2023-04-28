@@ -120,7 +120,7 @@ class KeyboardButton {
     if (text == "Enter") {
       updateTextarea(`${"\n"}`,1)
     } else if (this.type !== "functional") {
-      updateTextarea(text,1)
+      text === '    '? updateTextarea(text,4):updateTextarea(text,1)
     }
   }
 }
