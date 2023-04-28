@@ -26,6 +26,8 @@ let keyboardLang = localStorage.getItem("keyboardLanguage")
   : "ru";
 let unshifted = true;
 let iscapsLockPressed = false;
+let isLeftAltPressed = false;
+let isLeftCtrlPressed = false;
 
 async function generateKeyboardData() {
   try {
@@ -164,6 +166,24 @@ function pressCapsLock() {
   }
 }
 
+function switchLanguage(keyboardLang) {
+  clenKeyboard();
+  generateKeyboard(keyboardLayout[keyboardLang], unshifted);
+  let altLeftButton = document.querySelector(".AltLeft");
+  let cntrLeftButton = document.querySelector(".ControlLeft");
+  addPressedClass([altLeftButton, cntrLeftButton]);
+  localStorage.setItem("keyboardLanguage", keyboardLang)
+}
+
+function addPressedClass([...arg]) {
+  for (let element of arg) {
+    element.classList.add("pressed");
+    setTimeout(() => {
+      element.classList.remove("pressed");
+    }, 200);
+  }
+}
+
 function clenKeyboard() {
   while (keyboard.firstChild) {
     keyboard.removeChild(keyboard.firstChild);
@@ -180,12 +200,44 @@ window.addEventListener("keydown", (event) => {
     pressCapsLock();
   }
 
+  if (event.code === "AltLeft") {
+    isLeftAltPressed = true;
+  }
+
+  if (event.code === "ControlLeft") {
+    isLeftCtrlPressed = true;
+  }
+  if (isLeftAltPressed && isLeftCtrlPressed) {
+    console.log(111);
+    isLeftAltPressed = true;
+    isLeftCtrlPressed = true;
+    if (keyboardLang === "ru") {
+      keyboardLang = "en";
+      switchLanguage(keyboardLang);
+    } else {
+      keyboardLang = "ru";
+      switchLanguage(keyboardLang);
+    }
+  }
+
 });
 
 window.addEventListener("keyup", (event) => {
   if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
     let eventCode = event.code;
     pressShift(false, eventCode);
+  }
+
+  if (event.code === "AltLeft") {
+    isLeftAltPressed = false;
+    let altLeftButton = document.querySelector(".AltLeft");
+    altLeftButton.classList.add("pressed");
+  }
+
+  if (event.code === "ControlLeft") {
+    isLeftCtrlPressed = false;
+    let cntrLeftButton = document.querySelector(".ControlLeft");
+    cntrLeftButton.classList.add("pressed");
   }
 });
 
