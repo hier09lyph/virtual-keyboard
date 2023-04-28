@@ -100,6 +100,12 @@ class KeyboardButton {
         let eventCode = this.eventCode;
         pressShift(true, eventCode);
       }
+      if (this.eventCode === "Delete"){
+        deleteFunc()
+      }
+      if (this.eventCode === "Backspace"){
+        backspaceFunc()
+      }
     });
 
     button.addEventListener("mouseup", () => {
@@ -289,3 +295,21 @@ const newValue = currentValue.substring(0, startPos) + symbol + currentValue.sub
 textarea.value = newValue;
 textarea.setSelectionRange(startPos + n, startPos + n);
 }
+
+function deleteFunc(){
+  const startPos = textarea.selectionStart;
+  const endPos = textarea.selectionEnd;
+  const currentValue = textarea.value;
+  const newValue = currentValue.substring(0, startPos) + currentValue.substring(endPos+1);
+  textarea.value = newValue;
+  textarea.setSelectionRange(startPos, startPos);
+  }
+
+  function backspaceFunc(){
+    const startPos = textarea.selectionStart;
+    const endPos = textarea.selectionEnd;
+    const currentValue = textarea.value;
+    const newValue = currentValue.substring(0, startPos-1) + currentValue.substring(endPos);
+    textarea.value = newValue;
+    textarea.setSelectionRange(startPos-1, startPos-1);
+    }
