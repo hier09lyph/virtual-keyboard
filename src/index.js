@@ -240,10 +240,12 @@ window.addEventListener("keydown", (event) => {
   }
 
   if (event.code === "AltLeft") {
+    event.preventDefault()
     isLeftAltPressed = true;
   }
 
   if (event.code === "ControlLeft") {
+    event.preventDefault()
     isLeftCtrlPressed = true;
   }
   if (isLeftAltPressed && isLeftCtrlPressed) {
