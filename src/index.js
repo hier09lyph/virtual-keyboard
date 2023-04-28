@@ -118,9 +118,9 @@ class KeyboardButton {
 
   onButtonClick(text) {
     if (text == "Enter") {
-      textarea.value += `${"\n"}`;
+      updateTextarea(`${"\n"}`,1)
     } else if (this.type !== "functional") {
-      textarea.value += text;
+      updateTextarea(text,1)
     }
   }
 }
@@ -211,7 +211,7 @@ window.addEventListener("keydown", (event) => {
 
   if (event.code === "Tab") {
     event.preventDefault()
-    textarea.value += '    '
+    updateTextarea('    ',4)
   }
 
   if (event.key.length == 1) {
@@ -221,7 +221,7 @@ window.addEventListener("keydown", (event) => {
         keyboardButtons[i].eventCode === event.code &&
         keyboard.children[i] !== undefined
       ) {
-        textarea.value += keyboard.children[i].textContent;
+        updateTextarea(keyboard.children[i].textContent,1);
         keyboard.children[i].classList.add("pressed");
         setTimeout(() => {
           keyboard.children[i].classList.remove("pressed");
@@ -278,3 +278,12 @@ window.addEventListener("keyup", (event) => {
     cntrLeftButton.classList.add("pressed");
   }
 });
+
+function updateTextarea(symbol,n){
+const startPos = textarea.selectionStart;
+const endPos = textarea.selectionEnd;
+const currentValue = textarea.value;
+const newValue = currentValue.substring(0, startPos) + symbol + currentValue.substring(endPos);
+textarea.value = newValue;
+textarea.setSelectionRange(startPos + n, startPos + n);
+}
