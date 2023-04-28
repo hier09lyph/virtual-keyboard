@@ -209,6 +209,11 @@ function findKeyByEventCode(eventCode, keyboardButtons) {
 window.addEventListener("keydown", (event) => {
   findKeyByEventCode(event.code, keyboardButtons);
 
+  if (event.code === "Tab") {
+    event.preventDefault()
+    textarea.value += '    '
+  }
+
   if (event.key.length == 1) {
     event.preventDefault();
     for (let i = 0; i < keyboardButtons.length; i++) {
