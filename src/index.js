@@ -47,9 +47,10 @@ class KeyboardButton {
     this.character = keyData.character;
     this.alternativeCharacter = keyData.alternativeCharacter;
     this.element = this.createButtonElement(true);
+    this.elementShifted = this.createButtonElement(false);
   }
 
-  createButtonElement() {
+  createButtonElement(unshifted) {
     const button = document.createElement("div");
     if (this.type == "functional" || this.type == "spacing") {
       button.className = `${this.eventCode} key`;
@@ -57,11 +58,24 @@ class KeyboardButton {
       button.className = "key";
     }
 
-    button.textContent = this.character;
-    if (this.character == "Delete") {
-      button.textContent = "Del";
-    }
+    if (unshifted) {
+      button.textContent = this.character;
+      if (this.character == "Delete") {
+        button.textContent = "Del";
+      }
+    } else {
+      if (this.type == "changeable") {
+        button.textContent = this.alternativeCharacter;
+      } else if (this.type == "letter") {
+        button.textContent = this.character.toUpperCase();
+      } else {
+        button.textContent = this.character;
+      }
 
+      if (this.character == "Delete") {
+        button.textContent = "Del";
+      }
+    }
     button.addEventListener("click", () => {
       if (this.eventCode === "Tab") {
         this.onButtonClick("    ");
@@ -73,13 +87,20 @@ class KeyboardButton {
         this.onButtonClick(button.textContent);
       }
     });
-
     button.addEventListener("mousedown", () => {
       button.classList.add("pressed");
+      if (this.eventCode === "ShiftLeft" || this.eventCode === "ShiftRight") {
+        let eventCode = this.eventCode;
+        pressShift(true, eventCode);
+      }
     });
 
     button.addEventListener("mouseup", () => {
       button.classList.remove("pressed");
+      if (this.eventCode === "ShiftLeft" || this.eventCode === "ShiftRight") {
+        let eventCode = this.eventCode
+        pressShift(false, eventCode)
+      }
     });
 
     return button;
@@ -105,3 +126,38 @@ function generateKeyboard(layout, unshifted) {
     keyboardButtons.push(key);
   });
 }
+
+function pressShift(pressed, eventCode) {
+  if (pressed) {
+    unshifted = false;
+    clenKeyboard();
+    generateKeyboard(keyboardLayout[keyboardLang], unshifted);
+
+    let shiftButton = document.querySelector("." + `${eventCode}`);
+    shiftButton.classList.add("pressed");
+  } else {
+    unshifted = true;
+    clenKeyboard();
+    generateKeyboard(keyboardLayout[keyboardLang], unshifted);
+  }
+}
+
+function clenKeyboard() {
+  while (keyboard.firstChild) {
+    keyboard.removeChild(keyboard.firstChild);
+  }
+}
+
+window.addEventListener("keydown", (event) => {
+  if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+    let eventCode = event.code;
+    pressShift(true, eventCode);
+  }
+});
+
+window.addEventListener("keyup", (event) => {
+  if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+    let eventCode = event.code;
+    pressShift(false, eventCode);
+  }
+});
