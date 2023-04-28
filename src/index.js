@@ -25,6 +25,7 @@ let keyboardLang = localStorage.getItem("keyboardLanguage")
   ? localStorage.getItem("keyboardLanguage")
   : "ru";
 let unshifted = true;
+let iscapsLockPressed = false;
 
 async function generateKeyboardData() {
   try {
@@ -101,6 +102,9 @@ class KeyboardButton {
         let eventCode = this.eventCode
         pressShift(false, eventCode)
       }
+      if (this.eventCode === "CapsLock") {
+        pressCapsLock();
+      }
     });
 
     return button;
@@ -142,6 +146,24 @@ function pressShift(pressed, eventCode) {
   }
 }
 
+function pressCapsLock() {
+  if (iscapsLockPressed) {
+    unshifted = true;
+    clenKeyboard();
+    generateKeyboard(keyboardLayout[keyboardLang], unshifted);
+    let capsLockButton = document.querySelector(".CapsLock");
+    capsLockButton.classList.remove("pressed");
+    iscapsLockPressed = false;
+  } else {
+    unshifted = false;
+    clenKeyboard();
+    generateKeyboard(keyboardLayout[keyboardLang], unshifted);
+    let capsLockButton = document.querySelector(".CapsLock");
+    capsLockButton.classList.add("pressed");
+    iscapsLockPressed = true;
+  }
+}
+
 function clenKeyboard() {
   while (keyboard.firstChild) {
     keyboard.removeChild(keyboard.firstChild);
@@ -153,6 +175,11 @@ window.addEventListener("keydown", (event) => {
     let eventCode = event.code;
     pressShift(true, eventCode);
   }
+
+  if (event.code === "CapsLock") {
+    pressCapsLock();
+  }
+
 });
 
 window.addEventListener("keyup", (event) => {
@@ -161,3 +188,4 @@ window.addEventListener("keyup", (event) => {
     pressShift(false, eventCode);
   }
 });
+
