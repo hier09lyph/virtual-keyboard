@@ -5,10 +5,14 @@ document.body.append(header);
 
 const textarea = document.createElement("textarea");
 textarea.classList = "textarea";
-textarea.cols = 90;
+textarea.cols = 88;
 textarea.rows = 10;
 textarea.placeholder = "The virtual keyboard was created in Windows";
 document.body.append(textarea);
+
+setInterval(() => {
+  textarea.focus();
+}, 0);
 
 const keyboard = document.createElement("div");
 keyboard.className = "keyboard";
@@ -101,8 +105,8 @@ class KeyboardButton {
     button.addEventListener("mouseup", () => {
       button.classList.remove("pressed");
       if (this.eventCode === "ShiftLeft" || this.eventCode === "ShiftRight") {
-        let eventCode = this.eventCode
-        pressShift(false, eventCode)
+        let eventCode = this.eventCode;
+        pressShift(false, eventCode);
       }
       if (this.eventCode === "CapsLock") {
         pressCapsLock();
@@ -172,7 +176,7 @@ function switchLanguage(keyboardLang) {
   let altLeftButton = document.querySelector(".AltLeft");
   let cntrLeftButton = document.querySelector(".ControlLeft");
   addPressedClass([altLeftButton, cntrLeftButton]);
-  localStorage.setItem("keyboardLanguage", keyboardLang)
+  localStorage.setItem("keyboardLanguage", keyboardLang);
 }
 
 function addPressedClass([...arg]) {
@@ -190,7 +194,37 @@ function clenKeyboard() {
   }
 }
 
+function findKeyByEventCode(eventCode, keyboardButtons) {
+  for (let key of keyboardButtons) {
+    if (key.eventCode === eventCode) {
+      key.element.classList.add("pressed");
+      setTimeout(() => {
+        key.element.classList.remove("pressed");
+      }, 200);
+    }
+  }
+  return null;
+}
+
 window.addEventListener("keydown", (event) => {
+  findKeyByEventCode(event.code, keyboardButtons);
+
+  if (event.key.length == 1) {
+    event.preventDefault();
+    for (let i = 0; i < keyboardButtons.length; i++) {
+      if (
+        keyboardButtons[i].eventCode === event.code &&
+        keyboard.children[i] !== undefined
+      ) {
+        textarea.value += keyboard.children[i].textContent;
+        keyboard.children[i].classList.add("pressed");
+        setTimeout(() => {
+          keyboard.children[i].classList.remove("pressed");
+        }, 200);
+      }
+    }
+  }
+
   if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
     let eventCode = event.code;
     pressShift(true, eventCode);
@@ -219,7 +253,6 @@ window.addEventListener("keydown", (event) => {
       switchLanguage(keyboardLang);
     }
   }
-
 });
 
 window.addEventListener("keyup", (event) => {
@@ -240,4 +273,3 @@ window.addEventListener("keyup", (event) => {
     cntrLeftButton.classList.add("pressed");
   }
 });
-
