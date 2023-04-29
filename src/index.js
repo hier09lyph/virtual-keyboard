@@ -12,8 +12,6 @@ textarea.cols = 88;
 textarea.rows = 10;
 document.body.append(textarea);
 
-
-
 setInterval(() => {
   textarea.focus();
 }, 0);
@@ -26,17 +24,26 @@ const description = document.createElement("p");
 description.className = "description";
 document.body.append(description);
 
-function descriptionLanguage(){
-  header.innerHTML = createDescriptionLanguage("Виртуальная клавитура", "Virtual Keyboard");
-  textarea.placeholder = createDescriptionLanguage("Виртуальная клавитару создана в ОС Windows", "The virtual keyboard was created in Windows");
-  description.innerHTML = createDescriptionLanguage("Для переключения языка раскладки клавиатуры используйте комбинацию клавиш: Left Ctrl + Left Alt", "To switch the language combination: Left Ctrl + Left Alt")
+function descriptionLanguage() {
+  header.innerHTML = createDescriptionLanguage(
+    "Виртуальная клавитура",
+    "Virtual Keyboard"
+  );
+  textarea.placeholder = createDescriptionLanguage(
+    "Виртуальная клавитару создана в ОС Windows",
+    "The virtual keyboard was created in Windows"
+  );
+  description.innerHTML = createDescriptionLanguage(
+    "Для переключения языка раскладки клавиатуры используйте комбинацию клавиш: Left Ctrl + Left Alt",
+    "To switch the language combination: Left Ctrl + Left Alt"
+  );
 }
 
-function createDescriptionLanguage(ru,en){
-  return keyboardLang == 'ru'? ru: en; 
+function createDescriptionLanguage(ru, en) {
+  return keyboardLang == "ru" ? ru : en;
 }
 
-descriptionLanguage()
+descriptionLanguage();
 
 let keyboardLayout;
 let keyboardButtons = [];
@@ -51,7 +58,7 @@ async function generateKeyboardData() {
     const response = await fetch("assets/keyboard.json");
     const data = await response.json();
     keyboardLayout = data;
-    console.log(keyboardLayout[keyboardLang]);
+
     generateKeyboard(keyboardLayout[keyboardLang], unshifted);
   } catch (error) {
     console.error(error);
@@ -116,16 +123,15 @@ class KeyboardButton {
         let eventCode = this.eventCode;
         pressShift(true, eventCode);
       }
-      if (this.eventCode === "Delete"){
-        deleteFunc()
+      if (this.eventCode === "Delete") {
+        deleteFunc();
       }
-      if (this.eventCode === "Backspace"){
-        backspaceFunc()
+      if (this.eventCode === "Backspace") {
+        backspaceFunc();
       }
     });
 
     button.addEventListener("mouseup", () => {
-      // button.classList.remove("pressed");
       if (this.eventCode === "ShiftLeft" || this.eventCode === "ShiftRight") {
         let eventCode = this.eventCode;
         pressShift(false, eventCode);
@@ -140,9 +146,9 @@ class KeyboardButton {
 
   onButtonClick(text) {
     if (text == "Enter") {
-      updateTextarea(`${"\n"}`,1)
+      updateTextarea(`${"\n"}`, 1);
     } else if (this.type !== "functional") {
-      text === '    '? updateTextarea(text,4):updateTextarea(text,1)
+      text === "    " ? updateTextarea(text, 4) : updateTextarea(text, 1);
     }
   }
 }
@@ -194,7 +200,7 @@ function pressCapsLock() {
 
 function switchLanguage(keyboardLang) {
   clenKeyboard();
-  descriptionLanguage()
+  descriptionLanguage();
   generateKeyboard(keyboardLayout[keyboardLang], unshifted);
   let altLeftButton = document.querySelector(".AltLeft");
   let cntrLeftButton = document.querySelector(".ControlLeft");
@@ -233,8 +239,8 @@ window.addEventListener("keydown", (event) => {
   findKeyByEventCode(event.code, keyboardButtons);
 
   if (event.code === "Tab") {
-    event.preventDefault()
-    updateTextarea('    ',4)
+    event.preventDefault();
+    updateTextarea("    ", 4);
   }
 
   if (event.key.length == 1) {
@@ -244,7 +250,7 @@ window.addEventListener("keydown", (event) => {
         keyboardButtons[i].eventCode === event.code &&
         keyboard.children[i] !== undefined
       ) {
-        updateTextarea(keyboard.children[i].textContent,1);
+        updateTextarea(keyboard.children[i].textContent, 1);
         keyboard.children[i].classList.add("pressed");
         setTimeout(() => {
           keyboard.children[i].classList.remove("pressed");
@@ -263,16 +269,15 @@ window.addEventListener("keydown", (event) => {
   }
 
   if (event.code === "AltLeft") {
-    event.preventDefault()
+    event.preventDefault();
     isLeftAltPressed = true;
   }
 
   if (event.code === "ControlLeft") {
-    event.preventDefault()
+    event.preventDefault();
     isLeftCtrlPressed = true;
   }
   if (isLeftAltPressed && isLeftCtrlPressed) {
-    console.log(111);
     isLeftAltPressed = true;
     isLeftCtrlPressed = true;
     if (keyboardLang === "ru") {
@@ -304,30 +309,34 @@ window.addEventListener("keyup", (event) => {
   }
 });
 
-function updateTextarea(symbol,n){
-const startPos = textarea.selectionStart;
-const endPos = textarea.selectionEnd;
-const currentValue = textarea.value;
-const newValue = currentValue.substring(0, startPos) + symbol + currentValue.substring(endPos);
-textarea.value = newValue;
-textarea.setSelectionRange(startPos + n, startPos + n);
-}
-
-function deleteFunc(){
+function updateTextarea(symbol, n) {
   const startPos = textarea.selectionStart;
   const endPos = textarea.selectionEnd;
   const currentValue = textarea.value;
-  const newValue = currentValue.substring(0, startPos) + currentValue.substring(endPos+1);
+  const newValue =
+    currentValue.substring(0, startPos) +
+    symbol +
+    currentValue.substring(endPos);
+  textarea.value = newValue;
+  textarea.setSelectionRange(startPos + n, startPos + n);
+}
+
+function deleteFunc() {
+  const startPos = textarea.selectionStart;
+  const endPos = textarea.selectionEnd;
+  const currentValue = textarea.value;
+  const newValue =
+    currentValue.substring(0, startPos) + currentValue.substring(endPos + 1);
   textarea.value = newValue;
   textarea.setSelectionRange(startPos, startPos);
-  }
+}
 
-  function backspaceFunc(){
-    const startPos = textarea.selectionStart;
-    const endPos = textarea.selectionEnd;
-    const currentValue = textarea.value;
-    const newValue = currentValue.substring(0, startPos-1) + currentValue.substring(endPos);
-    textarea.value = newValue;
-    textarea.setSelectionRange(startPos-1, startPos-1);
-    }
-
+function backspaceFunc() {
+  const startPos = textarea.selectionStart;
+  const endPos = textarea.selectionEnd;
+  const currentValue = textarea.value;
+  const newValue =
+    currentValue.substring(0, startPos - 1) + currentValue.substring(endPos);
+  textarea.value = newValue;
+  textarea.setSelectionRange(startPos - 1, startPos - 1);
+}
