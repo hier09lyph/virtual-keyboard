@@ -1,14 +1,18 @@
+let keyboardLang = localStorage.getItem("keyboardLanguage")
+  ? localStorage.getItem("keyboardLanguage")
+  : "ru";
+
 const header = document.createElement("div");
 header.classList = "header";
-header.innerHTML = "Virtual Keyboard";
 document.body.append(header);
 
 const textarea = document.createElement("textarea");
 textarea.classList = "textarea";
 textarea.cols = 88;
 textarea.rows = 10;
-textarea.placeholder = "The virtual keyboard was created in Windows";
 document.body.append(textarea);
+
+
 
 setInterval(() => {
   textarea.focus();
@@ -20,14 +24,23 @@ document.body.append(keyboard);
 
 const description = document.createElement("p");
 description.className = "description";
-description.innerHTML = "To switch the language combination: left ctrl + alt";
 document.body.append(description);
+
+function descriptionLanguage(){
+  header.innerHTML = createDescriptionLanguage("Виртуальная клавитура", "Virtual Keyboard");
+  textarea.placeholder = createDescriptionLanguage("Виртуальная клавитару создана в ОС Windows", "The virtual keyboard was created in Windows");
+  description.innerHTML = createDescriptionLanguage("Для переключения языка раскладки клавиатуры используйте комбинацию клавиш: Left Ctrl + Left Alt", "To switch the language combination: Left Ctrl + Left Alt")
+}
+
+function createDescriptionLanguage(ru,en){
+  return keyboardLang == 'ru'? ru: en; 
+}
+
+descriptionLanguage()
 
 let keyboardLayout;
 let keyboardButtons = [];
-let keyboardLang = localStorage.getItem("keyboardLanguage")
-  ? localStorage.getItem("keyboardLanguage")
-  : "ru";
+
 let unshifted = true;
 let iscapsLockPressed = false;
 let isLeftAltPressed = false;
@@ -181,6 +194,7 @@ function pressCapsLock() {
 
 function switchLanguage(keyboardLang) {
   clenKeyboard();
+  descriptionLanguage()
   generateKeyboard(keyboardLayout[keyboardLang], unshifted);
   let altLeftButton = document.querySelector(".AltLeft");
   let cntrLeftButton = document.querySelector(".ControlLeft");
@@ -316,3 +330,4 @@ function deleteFunc(){
     textarea.value = newValue;
     textarea.setSelectionRange(startPos-1, startPos-1);
     }
+
