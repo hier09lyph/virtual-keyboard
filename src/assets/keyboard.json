@@ -1,0 +1,683 @@
+{
+  "ru": [
+    {
+      "eventCode": "Backquote",
+      "type": "letter",
+      "character": "ё"
+    },
+    {
+      "eventCode": "Digit1",
+      "type": "changeable",
+      "character": "1",
+      "alternativeCharacter": "!"
+    },
+    {
+      "eventCode": "Digit2",
+      "type": "changeable",
+      "character": "2",
+      "alternativeCharacter": "\""
+    },
+    {
+      "eventCode": "Digit3",
+      "type": "changeable",
+      "character": "3",
+      "alternativeCharacter": "№"
+    },
+    {
+      "eventCode": "Digit4",
+      "type": "changeable",
+      "character": "4",
+      "alternativeCharacter": ";"
+    },
+    {
+      "eventCode": "Digit5",
+      "type": "changeable",
+      "character": "5",
+      "alternativeCharacter": "%"
+    },
+    {
+      "eventCode": "Digit6",
+      "type": "changeable",
+      "character": "6",
+      "alternativeCharacter": ":"
+    },
+    {
+      "eventCode": "Digit7",
+      "type": "changeable",
+      "character": "7",
+      "alternativeCharacter": "?"
+    },
+    {
+      "eventCode": "Digit8",
+      "type": "changeable",
+      "character": "8",
+      "alternativeCharacter": "*"
+    },
+    {
+      "eventCode": "Digit9",
+      "type": "changeable",
+      "character": "9",
+      "alternativeCharacter": "("
+    },
+    {
+      "eventCode": "Digit0",
+      "type": "changeable",
+      "character": "0",
+      "alternativeCharacter": ")"
+    },
+    {
+      "eventCode": "Minus",
+      "type": "changeable",
+      "character": "-",
+      "alternativeCharacter": "_"
+    },
+    {
+      "eventCode": "Equal",
+      "type": "changeable",
+      "character": "=",
+      "alternativeCharacter": "+"
+    },
+    {
+      "eventCode": "Backspace",
+      "type": "functional",
+      "character": "Backspace"
+    },
+    {
+      "eventCode": "Tab",
+      "type": "spacing",
+      "character": "Tab"
+    },
+    {
+      "eventCode": "KeyQ",
+      "type": "letter",
+      "character": "й"
+    },
+    {
+      "eventCode": "KeyW",
+      "type": "letter",
+      "character": "ц"
+    },
+    {
+      "eventCode": "KeyE",
+      "type": "letter",
+      "character": "у"
+    },
+    {
+      "eventCode": "KeyR",
+      "type": "letter",
+      "character": "к"
+    },
+    {
+      "eventCode": "KeyT",
+      "type": "letter",
+      "character": "е"
+    },
+    {
+      "eventCode": "KeyY",
+      "type": "letter",
+      "character": "н"
+    },
+    {
+      "eventCode": "KeyU",
+      "type": "letter",
+      "character": "г"
+    },
+    {
+      "eventCode": "KeyI",
+      "type": "letter",
+      "character": "ш"
+    },
+    {
+      "eventCode": "KeyO",
+      "type": "letter",
+      "character": "щ"
+    },
+    {
+      "eventCode": "KeyP",
+      "type": "letter",
+      "character": "з"
+    },
+    {
+      "eventCode": "BracketLeft",
+      "type": "letter",
+      "character": "х"
+    },
+    {
+      "eventCode": "BracketRight",
+      "type": "letter",
+      "character": "ъ"
+    },
+    {
+      "eventCode": "Backslash",
+      "type": "changeable",
+      "character": "\\",
+      "alternativeCharacter": "/"
+    },
+    {
+      "eventCode": "Delete",
+      "type": "functional",
+      "character": "Delete"
+    },
+    {
+      "eventCode": "CapsLock",
+      "type": "functional",
+      "character": "CapsLock"
+    },
+    {
+      "eventCode": "KeyA",
+      "type": "letter",
+      "character": "ф"
+    },
+    {
+      "eventCode": "KeyS",
+      "type": "letter",
+      "character": "ы"
+    },
+    {
+      "eventCode": "KeyD",
+      "type": "letter",
+      "character": "в"
+    },
+    {
+      "eventCode": "KeyF",
+      "type": "letter",
+      "character": "а"
+    },
+    {
+      "eventCode": "KeyG",
+      "type": "letter",
+      "character": "п"
+    },
+    {
+      "eventCode": "KeyH",
+      "type": "letter",
+      "character": "р"
+    },
+    {
+      "eventCode": "KeyJ",
+      "type": "letter",
+      "character": "о"
+    },
+    {
+      "eventCode": "KeyK",
+      "type": "letter",
+      "character": "л"
+    },
+    {
+      "eventCode": "KeyL",
+      "type": "letter",
+      "character": "д"
+    },
+    {
+      "eventCode": "Semicolon",
+      "type": "letter",
+      "character": "ж"
+    },
+    {
+      "eventCode": "Quote",
+      "type": "letter",
+      "character": "э"
+    },
+    {
+      "eventCode": "Enter",
+      "type": "spacing",
+      "character": "Enter"
+    },
+    {
+      "eventCode": "ShiftLeft",
+      "type": "functional",
+      "character": "Shift"
+   
+    },
+    {
+      "eventCode": "KeyZ",
+      "type": "letter",
+      "character": "я"
+    },
+    {
+      "eventCode": "KeyX",
+      "type": "letter",
+      "character": "ч"
+    },
+    {
+      "eventCode": "KeyC",
+      "type": "letter",
+      "character": "с"
+    },
+    {
+      "eventCode": "KeyV",
+      "type": "letter",
+      "character": "м"
+    },
+    {
+      "eventCode": "KeyB",
+      "type": "letter",
+      "character": "и"
+    },
+    {
+      "eventCode": "KeyN",
+      "type": "letter",
+      "character": "т"
+    },
+    {
+      "eventCode": "KeyM",
+      "type": "letter",
+      "character": "ь"
+    },
+    {
+      "eventCode": "Comma",
+      "type": "letter",
+      "character": "б"
+    },
+    {
+      "eventCode": "Period",
+      "type": "letter",
+      "character": "ю"
+    },
+    {
+      "eventCode": "Slash",
+      "type": "changeable",
+      "character": ".",
+      "alternativeCharacter": ","
+    },
+    {
+      "eventCode": "ArrowUp",
+      "type": "letter",
+      "character": "ᐃ"
+    },
+    {
+      "eventCode": "ShiftRight",
+      "type": "functional",
+      "character": "Shift"
+    },
+    {
+      "eventCode": "ControlLeft",
+      "type": "functional",
+      "character": "Ctrl"
+    },
+    {
+      "eventCode": "MetaLeft",
+      "type": "functional",
+      "character": "Win"
+    },
+    {
+      "eventCode": "AltLeft",
+      "type": "functional",
+      "character": "Alt"
+    },
+    {
+      "eventCode": "Space",
+      "type": "spacing",
+      "character": " "
+    },
+    {
+      "eventCode": "AltRight",
+      "type": "functional",
+      "character": "Alt"
+    },
+    {
+      "eventCode": "ArrowLeft",
+      "type": "letter",
+      "character": "ᐊ"
+    },
+    {
+      "eventCode": "ArrowDown",
+      "type": "letter",
+      "character": "ᐁ"
+    },
+    {
+      "eventCode": "ArrowRight",
+      "type": "letter",
+      "character": "ᐅ"
+    },
+    {
+      "eventCode": "ControlRight",
+      "type": "functional",
+      "character": "Ctrl"
+    }
+  ],
+
+  "en": [
+    {
+      "eventCode": "Backquote",
+      "type": "changeable",
+      "character": "`",
+      "alternativeCharacter": "~"
+    },
+    {
+      "eventCode": "Digit1",
+      "type": "changeable",
+      "character": "1",
+      "alternativeCharacter": "!"
+    },
+    {
+      "eventCode": "Digit2",
+      "type": "changeable",
+      "character": "2",
+      "alternativeCharacter": "@"
+    },
+    {
+      "eventCode": "Digit3",
+      "type": "changeable",
+      "character": "3",
+      "alternativeCharacter": "#"
+    },
+    {
+      "eventCode": "Digit4",
+      "type": "changeable",
+      "character": "4",
+      "alternativeCharacter": "$"
+    },
+    {
+      "eventCode": "Digit5",
+      "type": "changeable",
+      "character": "5",
+      "alternativeCharacter": "%"
+    },
+    {
+      "eventCode": "Digit6",
+      "type": "changeable",
+      "character": "6",
+      "alternativeCharacter": "^"
+    },
+    {
+      "eventCode": "Digit7",
+      "type": "changeable",
+      "character": "7",
+      "alternativeCharacter": "&"
+    },
+    {
+      "eventCode": "Digit8",
+      "type": "changeable",
+      "character": "8",
+      "alternativeCharacter": "*"
+    },
+    {
+      "eventCode": "Digit9",
+      "type": "changeable",
+      "character": "9",
+      "alternativeCharacter": "("
+    },
+    {
+      "eventCode": "Digit0",
+      "type": "changeable",
+      "character": "0",
+      "alternativeCharacter": ")"
+    },
+    {
+      "eventCode": "Minus",
+      "type": "changeable",
+      "character": "-",
+      "alternativeCharacter": "_"
+    },
+    {
+      "eventCode": "Equal",
+      "type": "changeable",
+      "character": "=",
+      "alternativeCharacter": "+"
+    },
+    {
+      "eventCode": "Backspace",
+      "type": "functional",
+      "character": "Backspace"
+    },
+    {
+      "eventCode": "Tab",
+      "type": "spacing",
+      "character": "Tab"
+    },
+    {
+      "eventCode": "KeyQ",
+      "type": "letter",
+      "character": "q"
+    },
+    {
+      "eventCode": "KeyW",
+      "type": "letter",
+      "character": "w"
+    },
+    {
+      "eventCode": "KeyE",
+      "type": "letter",
+      "character": "e"
+    },
+    {
+      "eventCode": "KeyR",
+      "type": "letter",
+      "character": "r"
+    },
+    {
+      "eventCode": "KeyT",
+      "type": "letter",
+      "character": "t"
+    },
+    {
+      "eventCode": "KeyY",
+      "type": "letter",
+      "character": "y"
+    },
+    {
+      "eventCode": "KeyU",
+      "type": "letter",
+      "character": "u"
+    },
+    {
+      "eventCode": "KeyI",
+      "type": "letter",
+      "character": "i"
+    },
+    {
+      "eventCode": "KeyO",
+      "type": "letter",
+      "character": "o"
+    },
+    {
+      "eventCode": "KeyP",
+      "type": "letter",
+      "character": "p"
+    },
+    {
+      "eventCode": "BracketLeft",
+      "type": "changeable",
+      "character": "[",
+      "alternativeCharacter": "{"
+    },
+    {
+      "eventCode": "BracketRight",
+      "type": "changeable",
+      "character": "]",
+      "alternativeCharacter": "}"
+    },
+    {
+      "eventCode": "Backslash",
+      "type": "changeable",
+      "character": "\\",
+      "alternativeCharacter": "|"
+    },
+    {
+      "eventCode": "Delete",
+      "type": "functional",
+      "character": "Delete"
+    },
+    {
+      "eventCode": "CapsLock",
+      "type": "functional",
+      "character": "CapsLock"
+    },
+    {
+      "eventCode": "KeyA",
+      "type": "letter",
+      "character": "a"
+    },
+    {
+      "eventCode": "KeyS",
+      "type": "letter",
+      "character": "s"
+    },
+    {
+      "eventCode": "KeyD",
+      "type": "letter",
+      "character": "d"
+    },
+    {
+      "eventCode": "KeyF",
+      "type": "letter",
+      "character": "f"
+    },
+    {
+      "eventCode": "KeyG",
+      "type": "letter",
+      "character": "g"
+    },
+    {
+      "eventCode": "KeyH",
+      "type": "letter",
+      "character": "h"
+    },
+    {
+      "eventCode": "KeyJ",
+      "type": "letter",
+      "character": "j"
+    },
+    {
+      "eventCode": "KeyK",
+      "type": "letter",
+      "character": "k"
+    },
+    {
+      "eventCode": "KeyL",
+      "type": "letter",
+      "character": "l"
+    },
+    {
+      "eventCode": "Semicolon",
+      "type": "changeable",
+      "character": ";",
+      "alternativeCharacter": ":"
+    },
+    {
+      "eventCode": "Quote",
+      "type": "changeable",
+      "character": "'",
+      "alternativeCharacter": "\""
+    },
+    {
+      "eventCode": "Enter",
+      "type": "spacing",
+      "character": "Enter"
+    },
+    {
+      "eventCode": "ShiftLeft",
+      "type": "functional",
+      "character": "Shift"
+    },
+    {
+      "eventCode": "KeyZ",
+      "type": "letter",
+      "character": "z"
+    },
+    {
+      "eventCode": "KeyX",
+      "type": "letter",
+      "character": "x"
+    },
+    {
+      "eventCode": "KeyC",
+      "type": "letter",
+      "character": "c"
+    },
+    {
+      "eventCode": "KeyV",
+      "type": "letter",
+      "character": "v"
+    },
+    {
+      "eventCode": "KeyB",
+      "type": "letter",
+      "character": "b"
+    },
+    {
+      "eventCode": "KeyN",
+      "type": "letter",
+      "character": "n"
+    },
+    {
+      "eventCode": "KeyM",
+      "type": "letter",
+      "character": "m"
+    },
+    {
+      "eventCode": "Comma",
+      "type": "changeable",
+      "character": ",",
+      "alternativeCharacter": "<"
+    },
+    {
+      "eventCode": "Period",
+      "type": "changeable",
+      "character": ".",
+      "alternativeCharacter": ">"
+    },
+    {
+      "eventCode": "Slash",
+      "type": "changeable",
+      "character": "/",
+      "alternativeCharacter": "?"
+    },
+    {
+      "eventCode": "ArrowUp",
+      "type": "letter",
+      "character": "ᐃ"
+    },
+    {
+      "eventCode": "ShiftRight",
+      "type": "functional",
+      "character": "Shift"
+    },
+    {
+      "eventCode": "ControlLeft",
+      "type": "functional",
+      "character": "Ctrl"
+    },
+    {
+      "eventCode": "MetaLeft",
+      "type": "functional",
+      "character": "Win"
+    },
+    {
+      "eventCode": "AltLeft",
+      "type": "functional",
+      "character": "Alt"
+    },
+    {
+      "eventCode": "Space",
+      "type": "spacing",
+      "character": " "
+    },
+    {
+      "eventCode": "AltRight",
+      "type": "functional",
+      "character": "Alt"
+    },
+    {
+      "eventCode": "ArrowLeft",
+      "type": "letter",
+      "character": "ᐊ"
+    },
+    {
+      "eventCode": "ArrowDown",
+      "type": "letter",
+      "character": "ᐁ"
+    },
+    {
+      "eventCode": "ArrowRight",
+      "type": "letter",
+      "character": "ᐅ"
+    },
+    {
+      "eventCode": "ControlRight",
+      "type": "functional",
+      "character": "Ctrl"
+    }
+  ]
+}

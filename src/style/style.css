@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  text-align: center;
+  background-color: #c2f5c2;
+}
+
+.header {
+  font-family: "Sigmar", cursive;
+  font-size: 60px;
+  color: rgb(34, 154, 114);
+  text-align: center;
+  margin: 20px auto;
+}
+
+.textarea {
+  font-family: "Roboto", sans-serif;
+  max-width: 710px;
+  margin: 20px auto;
+  background-color: #c2f5c2;
+}
+
+textarea::-moz-placeholder {
+  padding-top: 20px;
+  text-align: center;
+}
+
+textarea::placeholder {
+  padding-top: 20px;
+  text-align: center;
+}
+
+p {
+  font-family: "Sigmar", cursive;
+  text-align: center;
+  color: rgb(34, 154, 114);
+}
+
+.keyboard {
+  font-family: "Roboto", sans-serif;
+  width: 710px;
+  height: 230px;
+  padding-top: 10px;
+  margin: 0 auto;
+  background: rgb(78, 182, 147);
+  border: 4px solid #222222;
+  border-radius: 10px;
+}
+
+.keyboard .key {
+  float: left;
+  margin-bottom: 4px;
+  width: 40px;
+  height: 40px;
+  margin-left: 6px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: border-radius 0.2s, background-color 0.4s, color 0.3s;
+}
+
+.keyboard .key.pressed {
+  border-radius: 8px;
+  background-color: #524e4e;
+  color: #fff;
+}
+
+.keyboard .AltLeft,
+.keyboard .AltRight,
+.keyboard .ArrowUp,
+.keyboard .ArrowLeft,
+.keyboard .ArrowDown,
+.keyboard .ArrowRight,
+.keyboard .Backspace,
+.keyboard .CapsLock,
+.keyboard .ControlLeft,
+.keyboard .ControlRight,
+.keyboard .Delete,
+.keyboard .Enter,
+.keyboard .ShiftLeft,
+.keyboard .ShiftRight,
+.keyboard .Tab,
+.keyboard .MetaLeft {
+  font-weight: 600;
+  background-color: #d1cdcd;
+}
+
+.keyboard .Tab {
+  width: 50px;
+}
+
+.keyboard .Backspace,
+.keyboard .CapsLock,
+.keyboard .ShiftLeft {
+  width: 100px;
+}
+
+.keyboard .Delete {
+  width: 44px;
+}
+
+.keyboard .Enter,
+.keyboard .ShiftRight {
+  width: 86px;
+}
+
+.keyboard .Space {
+  width: 330px;
+}/*# sourceMappingURL=style.css.map */
