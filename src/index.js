@@ -101,17 +101,22 @@ function generateKeyboard(layout, notUpperCase) {
 }
 
 function pressShift(pressed, eventCode) {
+  unshifted = unshifted === false;
+  const onCapsLock = iscapsLockPressed;
   if (pressed) {
-    unshifted = false;
     clenKeyboard();
     generateKeyboard(keyboardLayout[keyboardLang], unshifted);
 
     const shiftButton = document.querySelector(`.${eventCode}`);
     shiftButton.classList.add('pressed');
   } else {
-    unshifted = true;
     clenKeyboard();
     generateKeyboard(keyboardLayout[keyboardLang], unshifted);
+  }
+  if (onCapsLock) {
+    const capsLockButton = document.querySelector('.CapsLock');
+    capsLockButton.classList.add('pressed');
+    iscapsLockPressed = true;
   }
 }
 
